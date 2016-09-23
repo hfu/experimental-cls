@@ -51,7 +51,7 @@ var loader = {
   load : function(coords) {
     if (coords.z < 16) {
       return;
-    } else if (coords.z > 16) {
+    } else if (coords.z > 16) { // overzooming
       this.load({
         x : Math.floor(coords.x / 2),
         y : Math.floor(coords.y / 2),
@@ -68,7 +68,6 @@ var loader = {
     }
   }
 };
-
 var group = L.layerGroup();
 var map = L.map("map", {
   zoom : 16, center : [ 35.569639139, 139.674843917 ]
